@@ -2,7 +2,7 @@
   "name": "remiseria-be",
   "version": "1.0.0",
   "description": "backend para gestion de remises",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "start": "node build/index.js",
     "dev": "ts-node-dev src/index.ts",
