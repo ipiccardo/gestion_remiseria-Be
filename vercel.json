@@ -1,0 +1,14 @@
+{
+  "bulds": [
+    {
+      "src": "./index.js",
+      "use": "@vercer/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
