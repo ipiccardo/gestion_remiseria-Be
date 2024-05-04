@@ -1,0 +1,28 @@
+{
+  "name": "remiseria-be",
+  "version": "1.0.0",
+  "description": "backend para gestion de remises",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ivanPiccardo",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "pg": "^8.11.5",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/pg": "^8.11.5",
+    "ts-node-dev": "^2.0.0"
+  }
+}
