@@ -33,7 +33,7 @@ Este proyecto consiste en una aplicación web para gestionar una remisería. Uti
 
 1. **Base de datos:**
 
-   - Ejecuta el script `postgres.sql` en tu base de datos PostgreSQL para crear la estructura inicial de la base de datos.
+   - Ejecuta el script `remiseriaBD.sql` en tu base de datos PostgreSQL para crear la estructura inicial de la base de datos.
    - En el archivo `.env` del backend, configura la URL de conexión a la base de datos PostgreSQL (`DATABASE_URL`).
    - Asegúrate de que el puerto de tu base de datos PostgreSQL coincida con el especificado en el `.env` del backend.
 
