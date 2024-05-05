@@ -127,16 +127,16 @@ export class EmpleadoModel {
     try {
       await pool.query("BEGIN");
 
-      const eliminarRelacionSalario = await SalarioModel.eliminarSalario(
-        idEmpleado
+      await pool.query(
+        `UPDATE vehiculo SET id_empleado = null WHERE id_empleado = $1`,
+        [idEmpleado]
       );
 
-      const eliminarRelacionViaje = await ViajeModel.eliminarViaje(
-        idEmpleado,
-        "id_empleado"
-      );
+      await SalarioModel.eliminarSalario(idEmpleado);
 
-      const eliminarRelacion = await pool.query(
+      await ViajeModel.eliminarViaje(idEmpleado, "id_empleado");
+
+      await pool.query(
         `DELETE FROM empleado_licencia WHERE id_empleado = ${idEmpleado}`
       );
 
@@ -146,12 +146,7 @@ export class EmpleadoModel {
 
       await pool.query("COMMIT");
 
-      if (
-        eliminarEmpleado.rowCount &&
-        eliminarRelacion.rowCount &&
-        eliminarRelacionViaje.CODE === 200 &&
-        eliminarRelacionSalario.rowCount
-      ) {
+      if (eliminarEmpleado.rowCount) {
         return Success.DELETE;
       } else {
         return Fail.NOT_FOUND;
